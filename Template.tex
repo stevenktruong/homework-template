@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{amsmath, amssymb, mathtools, tikz, enumitem, fancyhdr, mleftright, wrapfig}
+\usepackage{amsmath, amssymb, mathtools, tikz, enumitem, fancyhdr, mleftright, wrapfig, scrextend}
 \usetikzlibrary{calc}
 \usepackage[margin=1in]{geometry}
 
@@ -23,6 +23,7 @@
 
 %%%%%%%%%%%%Commands%%%%%%%%%%%%
 \newcommand{\diff}[1]{\mathrm{d}#1}    % Upright differential
+\newcommand{\qed}{\hfill$\blacksquare$}
 \DeclarePairedDelimiter{\paren}{(}{)}
 \DeclarePairedDelimiter{\brac}{[}{]}
 \DeclarePairedDelimiter{\set}{\{}{\}}
@@ -49,6 +50,15 @@
 }	
 {
 	\end{enumerate}
+}
+\newenvironment{proofcase}[1]
+{
+	\par
+	#1
+	\begin{addmargin}[1em]{0em}
+}
+{	
+	\end{addmargin}
 }
 %%%%
 \newenvironment{solution}    % Solution environment
@@ -89,6 +99,23 @@
 			\item First part
 			\item Second part
 		\end{multipart}
+	\end{problem}
+
+	\begin{solution}
+		Solution
+	\end{solution}
+	
+\hrule %%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{problem}{4.6.20}
+		Multiple cases
+		\begin{proofcase}{Case 1:}
+			This is the first case.
+		\end{proofcase}
+		\begin{proofcase}{Case 2:}
+			This is the second case.
+		\end{proofcase}
+		This is the end of the proof. \qed
 	\end{problem}
 
 	\begin{solution}
