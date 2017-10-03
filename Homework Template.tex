@@ -1,0 +1,96 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, mathtools, tikz, enumitem, fancyhdr, mleftright, wrapfig}
+\usetikzlibrary{calc}
+\usepackage[margin=1in]{geometry}
+
+\def\class{CLASS}
+\def\discussion{DISCUSSION}
+\def\header{TITLE}
+\def\first{FIRST}
+\def\last{LAST}
+
+\fancypagestyle{first}
+{
+	\fancyhf{}
+	\setlength{\headsep}{\baselineskip}
+	\lhead{\class{} - Section \discussion}
+	\chead{\header}
+	\rhead{\last, \first}
+	\cfoot{\thepage}
+}
+
+\thispagestyle{first}
+
+%%%%%%%%%%%%Commands%%%%%%%%%%%%
+\newcommand{\diff}[1]{\mathrm{d}#1}    % Upright differential
+\newcommand{\paren}[1]{\mleft( #1 \mright)}
+\newcommand{\zerospace}
+{
+	\setlength{\abovedisplayskip}{0pt}
+	\setlength{\belowdisplayskip}{0pt}
+	\setlength{\abovedisplayshortskip}{0pt}
+	\setlength{\belowdisplayshortskip}{0pt}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%Environments%%%%%%%%%%
+\newenvironment{problem}[1]    % Problem environment
+{
+	\begin{enumerate}[leftmargin = 0in]
+		\item[\bfseries{#1}]
+}
+{	\end{enumerate}
+}
+\newenvironment{multipart}
+{
+	\begin{enumerate}[leftmargin = *, align = left, label = {\alph*.}, topsep = 0pt]
+}	
+{
+	\end{enumerate}
+}
+%%%%
+\newenvironment{solution}    % Solution environment
+{
+	\begin{enumerate}[leftmargin=0in]
+		\item[\bfseries{Solution}]
+}
+{
+	\end{enumerate}
+}
+%%%%
+\newenvironment{nospaceflalign*}    % No extra vertical space before flalign* environment
+{
+	\setlength{\abovedisplayskip}{-\baselineskip}
+	\csname flalign*\endcsname
+}
+{
+	\csname endflalign*\endcsname
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%Homework%%%%%%%%%%%%%
+\begin{document}
+
+	\begin{problem}{4.3.14}
+		Problem here
+	\end{problem}
+	
+	\begin{solution}
+		Solution
+	\end{solution}
+	
+\hrule %%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\begin{problem}{4.3.22}
+		Multiple part problem
+		\begin{multipart}
+			\item First part
+			\item Second part
+		\end{multipart}
+	\end{problem}
+
+	\begin{solution}
+		Solution
+	\end{solution}
+	
+\end{document}
