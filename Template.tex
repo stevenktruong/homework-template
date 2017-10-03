@@ -23,7 +23,9 @@
 
 %%%%%%%%%%%%Commands%%%%%%%%%%%%
 \newcommand{\diff}[1]{\mathrm{d}#1}    % Upright differential
-\newcommand{\paren}[1]{\mleft( #1 \mright)}
+\DeclarePairedDelimiter{\paren}{(}{)}
+\DeclarePairedDelimiter{\brac}{[}{]}
+\DeclarePairedDelimiter{\set}{\{}{\}}
 \newcommand{\zerospace}
 {
 	\setlength{\abovedisplayskip}{0pt}
