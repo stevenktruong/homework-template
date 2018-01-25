@@ -2,7 +2,16 @@
 
 A template for writing homework in LaTeX.
 
-Includes environments for proofs with multiple cases, multipart questions, and a simple QED command. You can preview what everything looks like in the included `.pdf` file.
+## What's Inside
+
+| Environment | Description |
+| ----------- | ----------- |
+| `proofcase` | Helps you organize your proof into cases |
+| `multipart` | Helps you type out problems with multiple parts |
+
+| Command | Description |
+| ------- | ----------- |
+| `\qed`  | A simple command for placing a symbol at the end of a proof |
 
 ## Multiple Cases
 The `proofcase` environment provides a simple way to organize your solution into cases. It takes one argument, which is the name of the case.
